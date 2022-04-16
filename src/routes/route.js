@@ -7,7 +7,7 @@ router.post("/authorcreation", AllControler.createAuthor)
  
 router.post("/publisherCreation", AllControler.createPublisher)
 
-//router.post("/getBooksInYear", BookControler.getBooksInYear)
+router.get("/getBooksData", AllControler.getBookdata)
 
 //router.post("/getParticularBooks", BookControler.getParticularBooks)
 
