@@ -1,14 +1,22 @@
-const BookModel= require("../bookmodel/bookmodel")
+const AuthorModel= require("../models/newAuthor")
+const PublisherModel= require("../models/newPublisher")
+const BookModel= require("../models/bookmodel")
 
-const createBook= async function (req, res) {
+const createAuthor= async function (req, res) {
     let data= req.body
-    let savedData= await BookModel.create(data)
-    res.send({msg: savedData})
+    let authorData= await AuthorModel.create(data)
+    res.send({msg: authorData})
 }
 
-const getBookList= async function (req, res) {
-    let allUsers= await BookModel.find().select({bookName: 1, authurName: 1, _id:0})
-    res.send({msg: allUsers})
+const createPublisher= async function (req, res) {
+    let data= req.body
+    let publisherData= await PublisherModel.create(data)
+    res.send({msg: publisherData})
+}
+
+const getBookdata= async function (req, res) {
+    let books= await BookModel.find().populate('author_id', 'publisher_id')
+    res.send({msg: books})
 }
 
 const getBooksInYear = async function (req, res){
@@ -38,9 +46,9 @@ const getRandomBooks= async function (req, res) {
     res.send({msg: allUsers})
 }
 
-module.exports.createBook= createBook;
-module.exports.getBookList= getBookList;
-module.exports.getBooksInYear= getBooksInYear;
+module.exports. createAuthor=  createAuthor;
+module.exports.createPublisher= createPublisher;
+module.exports.getBookdata= getBookdata;
 module.exports.getParticularBooks= getParticularBooks;
 module.exports.getINRBooks= getINRBooks;
 module.exports.getRandomBooks= getRandomBooks;
