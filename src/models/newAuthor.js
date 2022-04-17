@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const { stringify } = require('nodemon/lib/utils');
 
 const authorSchema = new mongoose.Schema( {
-    author_id: String,
+    author_id: {
+        type: String
+        
+    }, 
     authorName: {
         type: String,
         required: true

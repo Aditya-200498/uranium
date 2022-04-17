@@ -7,13 +7,15 @@ router.post("/authorcreation", AllControler.createAuthor)
  
 router.post("/publisherCreation", AllControler.createPublisher)
 
-router.get("/getBooksData", AllControler.getBookdata)
+router.post("/bookCreation", AllControler.createBook)
 
-//router.post("/getParticularBooks", BookControler.getParticularBooks)
+router.get("/getParticularBook", AllControler.getBookdata)
 
-//router.get("/price", BookControler.getINRBooks)
+router.post("/bookDetails", AllControler.createBookDetails)
 
-//router.get("/random", BookControler.getRandomBooks)
+router.put("/books", AllControler.updateData)
+
+router.put("/newPrice", AllControler.updatePrice)
 
 
     
