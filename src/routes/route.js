@@ -1,17 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const AllControler = require("../controllers/Controller")
+const BatchController= require("../controllers/batchController")
+const DeveloperController= require("../controllers/developerController")
 
 
-router.post("/authorcreation", AllControler.createAuthor)
+router.post("/batches", BatchController.createBatch)
  
-router.post("/publisherCreation", AllControler.createPublisher)
+router.post("/developers", DeveloperController.createDeveloper)
 
-router.post("/bookCreation", AllControler.createBook)
+router.get("/getdeveloper", DeveloperController.getDevelopers)
 
-router.get("/getParticularBook", AllControler.getBookdata)
+router.get("/getFemaleDev", DeveloperController.getFemaleDeveloper)
 
-router.post("/bookDetails", AllControler.createBookDetails)
+router.get("/getnewdeveloper", DeveloperController.programAndPercentage)
 
 router.put("/books", AllControler.updateData)
 

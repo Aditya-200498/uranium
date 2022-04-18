@@ -1,7 +1,7 @@
-const AuthorModel= require("../models/newAuthor")
-const PublisherModel= require("../models/newPublisher")
-const BookModel= require("../models/bookmodel")
-const res = require("express/lib/response")
+//const AuthorModel= require("../models/newAuthor")
+//const PublisherModel= require("../models/newPublisher")
+//const BookModel= require("../models/bookmodel")
+//const res = require("express/lib/response")
 //const newAuthor = require("../modelss/newAuthor")
 
 const createAuthor= async function (req, res) {
