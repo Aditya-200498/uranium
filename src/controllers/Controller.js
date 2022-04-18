@@ -55,20 +55,7 @@ const updatePrice = async function (req, res){
     res.send({msg : newThing})
 }
 
-const getINRBooks = async function (req, res){
-    let bookPrice = await BookModel.find({
-        'prices.indianPrice': { $in : [100, 200, 500] }
-    })
-    res.send({msg : bookPrice})
-}
 
-
-const getRandomBooks= async function (req, res) {
-    let allUsers= await BookModel.find({
-        $or: [{stockAvailable: true}, {totalPages: { $gt: 500}}]
-    })
-    res.send({msg: allUsers})
-}
 
 module.exports. createAuthor=  createAuthor;
 module.exports.createPublisher= createPublisher;
