@@ -14,6 +14,19 @@ mongoose.connect("mongodb+srv://Aditya1998:aadi1998@cluster0.zl7lv.mongodb.net/B
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) );
 
+
+const moment = require('moment');
+let time = moment();
+app.use (function (req, res, next) {
+    let url= req.originalUrl
+    console.log(url)
+    let ip= req.ip
+    console.log(ip)
+    console.log(time.format('h:mm:ss a'));
+    console.log(time.format('YYYY,MM,DD'));
+    next()
+})
+
 app.use('/', route);
 
 
