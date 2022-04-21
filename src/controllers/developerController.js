@@ -1,4 +1,4 @@
-const DeveloperModel= require("../models/developerModel")
+const DeveloperModel= require("../models/userModel")
 
 let createDeveloper= async function(req, res) {
     let data= req.body

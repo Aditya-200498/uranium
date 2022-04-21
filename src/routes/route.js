@@ -1,17 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const AllControler = require("../controllers/Controller")
-const BatchController= require("../controllers/batchController")
+const BatchController= require("../controllers/productController")
 const DeveloperController= require("../controllers/developerController")
+const MyProductController= require("../controllers/productController")
+const Mymiddleware= require("../middlewares/middleware")
+const MyOrderController= require("../controllers/orderController")
+const MyUserController= require("../controllers/userController")
 
 
-router.post("/batches", BatchController.createBatch)
+
+router.post("/product",  MyProductController.createProduct)
  
-router.post("/developers", DeveloperController.createDeveloper)
+//router.post("/order", Mymiddleware.headerValidate, MyOrderController.createOrder)
 
-router.get("/getdeveloper", DeveloperController.getDevelopers)
+router.post("/user",  Mymiddleware.headerValidate, MyUserController.createUser)
 
-router.get("/getFemaleDev", DeveloperController.getFemaleDeveloper)
+router.post("/orderMain",  MyOrderController.createNewOrder)
 
 router.get("/getnewdeveloper", DeveloperController.programAndPercentage)
 
